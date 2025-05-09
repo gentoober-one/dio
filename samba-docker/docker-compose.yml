@@ -1,0 +1,13 @@
+services:
+  samba:
+    build: .
+    container_name: samba
+    ports:
+      - "139:139"
+      - "445:445"
+      - "137:137/udp"
+      - "138:138/udp"
+    volumes:
+      - ~/samba-share:/samba/share
+    restart: unless-stopped
+
